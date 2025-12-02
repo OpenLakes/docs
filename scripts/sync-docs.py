@@ -24,8 +24,12 @@ SITE_ROOT = SCRIPT_DIR.parent
 DOCS_DIR = SITE_ROOT / "docs"
 PROJECTS_ROOT = SITE_ROOT.parent  # One directory up
 
-CORE_DIR = PROJECTS_ROOT / "core"
-PIER_DIR = PROJECTS_ROOT / "pier"
+CORE_DIR = Path(
+    os.environ.get("CORE_REPO_PATH", PROJECTS_ROOT / "core")
+).expanduser()
+PIER_DIR = Path(
+    os.environ.get("PIER_REPO_PATH", PROJECTS_ROOT / "pier")
+).expanduser()
 
 
 def ensure_dir(path: Path) -> None:

@@ -37,7 +37,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout openlakes-site
+      - name: Checkout documentation repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Full history for git-revision-date plugin
@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: openlakes-io/core
-          path: ../core
+          path: external/core
           token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true  # Don't fail if repo doesn't exist yet
 
@@ -54,7 +54,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: openlakes-io/pier
-          path: ../pier
+          path: external/pier
           token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true  # Don't fail if repo doesn't exist yet
 
@@ -64,6 +64,9 @@ jobs:
           version: "latest"
 
       - name: Sync documentation from projects
+        env:
+          CORE_REPO_PATH: external/core
+          PIER_REPO_PATH: external/pier
         run: uv run python scripts/sync-docs.py
 
       - name: Build documentation
