@@ -1,0 +1,31 @@
+# This workflow should be added to the CORE repository
+# It triggers documentation rebuild when core docs change
+#
+# Copy this file to: core/.github/workflows/trigger-docs.yml
+
+name: Trigger Docs Update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'CLAUDE.md'
+      - 'docker/**/README.md'
+      - 'docker/**/Dockerfile'
+      - 'layers/**/Chart.yaml'
+      - 'layers/**/values.yaml'
+      - 'examples/**/*.ipynb'
+      - 'examples/**/*.md'
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger docs rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DOCS_TRIGGER_TOKEN }}
+          repository: openlakes-io/openlakes-site
+          event-type: docs-update
+          client-payload: '{"source": "core", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'

@@ -1,0 +1,172 @@
+site_name: OpenLakes Documentation
+site_url: https://docs.openlakes.io
+site_description: Documentation for OpenLakes - The open-source lakehouse platform
+site_author: OpenLakes Team
+
+repo_name: openlakes
+repo_url: https://github.com/openlakes-io/openlakes-site
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - scheme: default
+      primary: cyan
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: cyan
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/logo.svg
+  favicon: assets/favicon.ico
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/index.md
+    - Requirements & Profiles: getting-started/prerequisites.md
+    - Quick Start: getting-started/quickstart.md
+    - Installation Script: getting-started/installation.md
+    - Configuration:
+      - core-config.yaml: getting-started/core-config.md
+      - Single-Node (Rancher Desktop): getting-started/rancher-desktop.md
+      - Multi-Node (RKE2): getting-started/rke2.md
+  - Core Platform:
+    - Overview: core/index.md
+    - Architecture: core/architecture.md
+    - Deployment Guide: core/deployment.md
+    - Storage Architecture: core/storage.md
+    - Ingress & Networking: core/ingress.md
+    - Components:
+      - Apache Spark: core/components/spark.md
+      - Trino: core/components/trino.md
+      - Apache Kafka: core/components/kafka.md
+      - Schema Registry (Apicurio): core/schema-registry.md
+      - MinIO: core/components/minio.md
+      - OpenMetadata: core/components/openmetadata.md
+      - JupyterHub: core/components/jupyterhub.md
+      - Project Nessie: core/components/nessie.md
+      - PostgreSQL & Redis: core/components/postgres-redis.md
+      - Apache Airflow: core/components/airflow.md
+      - Apache Superset: core/components/superset.md
+      - Meltano & Singer: core/components/meltano.md
+      - Debezium: core/components/debezium.md
+      - OpenSearch: core/components/opensearch.md
+      - Monitoring Stack: core/components/monitoring.md
+      - Traefik: core/components/traefik.md
+      - Longhorn: core/components/longhorn.md
+  - Tutorials:
+    - Overview: tutorials/index.md
+    - Ingest:
+      - Batch ETL Patterns: tutorials/batch-etl.md
+      - Stream Processing: tutorials/streaming.md
+    - Process:
+      - Hybrid Lambda Architectures: tutorials/03-lambda-01-speed-batch-layers.md
+      - CDC to Iceberg: tutorials/02-streaming-03-cdc-postgres-to-iceberg.md
+    - Catalog:
+      - Data Cataloging: tutorials/07-governance-04-data-cataloging.md
+      - Data Lineage: tutorials/07-governance-03-data-lineage.md
+    - Analyze:
+      - Analytics & BI Overview: tutorials/analytics.md
+      - Superset Self-Service: tutorials/05-analytics-bi-01-superset-self-service.md
+    - Observe:
+      - Storage Performance Tuning: tutorials/06-storage-performance-03-performance-comparison.md
+      - Table Maintenance: tutorials/08-maintenance-01-table-compaction.md
+  - Reference:
+    - Overview: reference/index.md
+    - Docker Images: reference/docker-images.md
+    - Helm Charts: reference/helm-charts.md
+    - CLI Reference: reference/cli.md
+    - Configuration: reference/configuration.md
+  - Development:
+    - Contributing: development/contributing.md
+    - Developer Guide: development/guide.md
+  - Legal:
+    - Privacy Policy: privacy-policy.md
+    - Terms of Service: terms-of-service.md
+
+plugins:
+  - search
+  - tags
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/openlakes-io
+    - icon: fontawesome/solid/envelope
+      link: mailto:hello@openlakes.io
+  generator: false
+  version:
+    provider: mike
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: Copyright &copy; 2024-2025 OpenLakes.io
