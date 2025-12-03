@@ -42,21 +42,24 @@ jobs:
         with:
           fetch-depth: 0  # Full history for git-revision-date plugin
 
-      - name: Checkout core (for docs sync)
-        uses: actions/checkout@v4
-        with:
-          repository: openlakes-io/core
-          path: external/core
-          token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true  # Don't fail if repo doesn't exist yet
-
-      - name: Checkout pier (for docs sync)
-        uses: actions/checkout@v4
-        with:
-          repository: openlakes-io/pier
-          path: external/pier
-          token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true  # Don't fail if repo doesn't exist yet
+      # External repo checkouts are disabled until repos are created and accessible
+      # Uncomment when openlakes-io/core and openlakes-io/pier exist with proper access tokens
+      #
+      # - name: Checkout core (for docs sync)
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: openlakes-io/core
+      #     path: external/core
+      #     token: ${{ secrets.DOCS_SYNC_TOKEN }}  # Requires PAT with repo access
+      #   continue-on-error: true
+      #
+      # - name: Checkout pier (for docs sync)
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: openlakes-io/pier
+      #     path: external/pier
+      #     token: ${{ secrets.DOCS_SYNC_TOKEN }}  # Requires PAT with repo access
+      #   continue-on-error: true
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v4
@@ -67,7 +70,12 @@ jobs:
         env:
           CORE_REPO_PATH: external/core
           PIER_REPO_PATH: external/pier
-        run: uv run python scripts/sync-docs.py
+        run: |
+          if [ -f scripts/sync-docs.py ]; then
+            uv run python scripts/sync-docs.py || echo "Sync script not critical, continuing..."
+          else
+            echo "No sync script found, skipping..."
+          fi
 
       - name: Build documentation
         run: uv run mkdocs build --strict
