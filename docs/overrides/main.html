@@ -4,3 +4,15 @@
   {{ super() }}
   <script defer data-domain="docs.openlakes.io" data-api="https://plausible.openlakes.io/api/event" src="https://plausible.openlakes.io/js/script.js"></script>
 {% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var homepage = 'https://openlakes.io/';
+      document.querySelectorAll('[data-md-component="logo"]').forEach(function (logo) {
+        logo.setAttribute('href', homepage);
+      });
+    });
+  </script>
+{% endblock %}

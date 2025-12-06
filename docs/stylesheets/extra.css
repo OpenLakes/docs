@@ -15,6 +15,14 @@
   background-color: var(--md-primary-fg-color);
 }
 
+.md-header__inner {
+  align-items: center;
+}
+
+.md-header__title {
+  display: none;
+}
+
 /* Grid cards for homepage */
 .grid.cards > ul {
   display: grid;
