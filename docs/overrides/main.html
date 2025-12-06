@@ -8,11 +8,19 @@
 {% block scripts %}
   {{ super() }}
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var homepage = 'https://openlakes.io/';
-      document.querySelectorAll('[data-md-component="logo"]').forEach(function (logo) {
-        logo.setAttribute('href', homepage);
-      });
-    });
+    (function () {
+      var homepage = 'https://openlakes.io';
+      var applyHomepage = function () {
+        document.querySelectorAll('[data-md-component="logo"]').forEach(function (logo) {
+          logo.setAttribute('href', homepage);
+        });
+      };
+
+      document.addEventListener('DOMContentLoaded', applyHomepage);
+
+      if (window.document$ && typeof document$.subscribe === 'function') {
+        document$.subscribe(applyHomepage);
+      }
+    })();
   </script>
 {% endblock %}
