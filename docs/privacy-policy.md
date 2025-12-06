@@ -2,7 +2,7 @@
 
 _Last updated: December 2025_
 
-This Privacy Policy explains how OpenLakes ("we," "us," or "our") collects, uses, and handles information in connection with https://openlakes.io, https://docs.openlakes.io, and any documentation, downloads, or trial experiences hosted on these sites (collectively, the "Services").
+This Privacy Policy explains how OpenLakes LLC, a Texas limited liability company ("OpenLakes," "we," "us," or "our"), collects, uses, and handles information in connection with https://openlakes.io, https://docs.openlakes.io, and any documentation, downloads, or trial experiences hosted on these sites (collectively, the "Services").
 
 !!! warning "Important Privacy Disclaimer"
     **We cannot guarantee full privacy or complete data protection.** While we implement reasonable measures, no system is fully secure. You use the Services and any OpenLakes software at your own risk. See the "No Guarantee of Privacy" section below for details.
@@ -94,4 +94,4 @@ We may update this Privacy Policy from time to time. When we do, we will revise 
 
 ## Contact
 
-For questions about this policy, email [hello@openlakes.io](mailto:hello@openlakes.io).
+For questions about this policy, email [hello@openlakes.io](mailto:hello@openlakes.io). Written inquiries may be sent to OpenLakes LLC, Attn: Privacy, Austin, Texas, USA.

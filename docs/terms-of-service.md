@@ -2,7 +2,7 @@
 
 _Last updated: December 2025_
 
-These Terms of Service ("Terms") govern your access to and use of https://openlakes.io, https://docs.openlakes.io, and any documentation, downloads, trial experiences, or related services (collectively, the "Services"). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.
+These Terms of Service ("Terms") govern your access to and use of https://openlakes.io, https://docs.openlakes.io, and any documentation, downloads, trial experiences, or related services (collectively, the "Services") provided by OpenLakes LLC, a Texas limited liability company ("OpenLakes," "we," "us," or "our"). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.
 
 !!! danger "Critical Disclaimers"
     **NO GUARANTEE OF PRIVACY OR DATA PROTECTION.** We cannot guarantee full privacy or complete data security. **NO GUARANTEE AGAINST DATA LOSS.** Data may be lost, corrupted, or become inaccessible. You are solely responsible for backups. **USE ENTIRELY AT YOUR OWN RISK.**
@@ -119,7 +119,7 @@ We may update, suspend, or discontinue any aspect of the Services at any time wi
 
 ## 13. Governing Law
 
-These Terms are governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws principles. Any disputes arising under these Terms shall be brought in the state or federal courts located in Delaware, and you consent to their jurisdiction.
+These Terms are governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of laws principles. Any disputes arising under these Terms shall be brought in the state or federal courts located in Austin, Travis County, Texas, and you consent to their jurisdiction and venue.
 
 ## 14. Severability
 
