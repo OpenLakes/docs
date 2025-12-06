@@ -18,7 +18,6 @@ on:
       - 'examples/**/*.ipynb'
       - 'examples/**/*.md'
 
-jobs:
 permissions:
   contents: read
 

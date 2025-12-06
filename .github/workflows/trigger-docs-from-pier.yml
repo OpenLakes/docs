@@ -16,7 +16,6 @@ on:
       - 'docker/**/README.md'
       - 'docker/**/Dockerfile'
 
-jobs:
 permissions:
   contents: read
 
