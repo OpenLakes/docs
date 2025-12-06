@@ -25,7 +25,7 @@ jobs:
       - name: Trigger docs rebuild
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.DOCS_TRIGGER_TOKEN }}
+          token: ${{ secrets.DOCS_TRIGGER_TOKEN != '' && secrets.DOCS_TRIGGER_TOKEN || github.token }}
           repository: openlakes-io/openlakes-site
           event-type: docs-update
           client-payload: '{"source": "core", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
