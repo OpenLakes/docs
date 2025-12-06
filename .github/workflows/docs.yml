@@ -1,7 +1,6 @@
 name: Build and Deploy Documentation
 
 on:
-  # Build on pushes to main
   push:
     branches: [main]
     paths:
@@ -10,16 +9,14 @@ on:
       - 'scripts/sync-docs.py'
       - '.github/workflows/docs.yml'
 
-  # Allow manual trigger
   workflow_dispatch:
     inputs:
       sync_from_projects:
-        description: 'Sync documentation from core/pier projects'
+        description: 'Also sync docs from linked repos (core/pier)'
         required: false
         default: 'false'
         type: boolean
 
-  # Trigger from other repositories (core/pier)
   repository_dispatch:
     types: [docs-update]
 
@@ -33,6 +30,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  UV_CACHE_DIR: ~/.cache/uv
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,33 +40,30 @@ jobs:
       - name: Checkout documentation repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history for git-revision-date plugin
+          fetch-depth: 0
 
-      # External repo checkouts are disabled until repos are created and accessible
-      # Uncomment when openlakes-io/core and openlakes-io/pier exist with proper access tokens
-      #
-      # - name: Checkout core (for docs sync)
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: openlakes-io/core
-      #     path: external/core
-      #     token: ${{ secrets.DOCS_SYNC_TOKEN }}  # Requires PAT with repo access
-      #   continue-on-error: true
-      #
-      # - name: Checkout pier (for docs sync)
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: openlakes-io/pier
-      #     path: external/pier
-      #     token: ${{ secrets.DOCS_SYNC_TOKEN }}  # Requires PAT with repo access
-      #   continue-on-error: true
+      - name: Restore uv cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.UV_CACHE_DIR }}
+          key: ${{ runner.os }}-uv-${{ hashFiles('uv.lock', 'pyproject.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-uv-
+
+      - name: Configure uv cache path
+        run: |
+          mkdir -p "$UV_CACHE_DIR"
+          echo "UV_CACHE_DIR=$UV_CACHE_DIR" >> "$GITHUB_ENV"
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v4
         with:
           version: "latest"
 
-      - name: Sync documentation from projects
+      - name: Sync documentation from linked projects
+        if: >
+          github.event_name == 'repository_dispatch' ||
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.sync_from_projects == 'true')
         env:
           CORE_REPO_PATH: external/core
           PIER_REPO_PATH: external/pier

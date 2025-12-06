@@ -3,7 +3,7 @@
 #
 # Copy this file to: pier/.github/workflows/trigger-docs.yml
 
-name: Trigger Docs Update
+name: Trigger Docs Update · Pier
 
 on:
   push:
@@ -15,6 +15,10 @@ on:
       - 'architecture/**/*.md'
       - 'docker/**/README.md'
       - 'docker/**/Dockerfile'
+
+jobs:
+permissions:
+  contents: read
 
 jobs:
   trigger:

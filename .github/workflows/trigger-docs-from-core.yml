@@ -3,7 +3,7 @@
 #
 # Copy this file to: core/.github/workflows/trigger-docs.yml
 
-name: Trigger Docs Update
+name: Trigger Docs Update · Core
 
 on:
   push:
@@ -17,6 +17,10 @@ on:
       - 'layers/**/values.yaml'
       - 'examples/**/*.ipynb'
       - 'examples/**/*.md'
+
+jobs:
+permissions:
+  contents: read
 
 jobs:
   trigger:
