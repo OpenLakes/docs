@@ -17,10 +17,21 @@
 
 .md-header__inner {
   align-items: center;
+  display: flex;
 }
 
 .md-header__title {
   display: none;
+}
+
+.md-header__inner > .md-header__option {
+  margin-left: auto;
+  margin-right: 0.75rem;
+}
+
+.md-header__inner > .md-header__button[for="__search"],
+.md-header__inner > .md-header__source {
+  margin-left: 0.75rem;
 }
 
 /* Grid cards for homepage */
