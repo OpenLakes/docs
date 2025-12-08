@@ -44,6 +44,10 @@ theme:
 
 nav:
   - Home: index.md
+  - OpenLakes Harbor:
+    - Overview: harbor/index.md
+    - Trial Quick Start: harbor/trial-quickstart.md
+    - Harbor vs Self-Hosted: harbor/vs-self-hosted.md
   - Getting Started:
     - Overview: getting-started/index.md
     - Requirements & Profiles: getting-started/prerequisites.md

@@ -162,10 +162,10 @@ Add entries pointing to your cluster node IP:
 
 ```bash
 # Add to /etc/hosts (replace IP with your node)
-10.27.25.11  dashboard.openlakes.dev minio.openlakes.dev nessie.openlakes.dev
-10.27.25.11  spark.openlakes.dev trino.openlakes.dev airflow.openlakes.dev
-10.27.25.11  jupyter.openlakes.dev superset.openlakes.dev metadata.openlakes.dev
-10.27.25.11  grafana.openlakes.dev prometheus.openlakes.dev
+192.168.1.10  dashboard.openlakes.dev minio.openlakes.dev nessie.openlakes.dev
+192.168.1.10  spark.openlakes.dev trino.openlakes.dev airflow.openlakes.dev
+192.168.1.10  jupyter.openlakes.dev superset.openlakes.dev metadata.openlakes.dev
+192.168.1.10  grafana.openlakes.dev prometheus.openlakes.dev
 ```
 
 ## Troubleshooting

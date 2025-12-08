@@ -19,14 +19,14 @@ Longhorn disks are defined at `/longhorn` and must be consistent. MinIO paths mu
 ## RKE2 config (per node)
 Example `/etc/rancher/rke2/config.yaml` (primary server shown). Worker nodes include a `server: https://<primary>:9345` line and omit the taints/labels unless you also want them control-plane-only.
 ```yaml
-token: "cRGBLv9b2utrbOpFQDhGpwjy2zUL2vefr77mYEvl30OHzKtpLOzqWLFhA1uZjvst"
+token: "<your-secure-token>"  # Generate with: openssl rand -hex 32
 
-# rbp2 is the initial / primary server (no "server:" line here)
+# primary-server is the initial server (no "server:" line here)
 tls-san:
-  - "10.27.25.82"         # rbp2 IP
-  - "10.27.25.11"         # ryzen IP
-  - "10.27.25.67"         # nuc IP
-  - "k8s.openlakes.dev"   # hostname you will use for API/kubectl
+  - "192.168.1.10"        # primary server IP
+  - "192.168.1.11"        # worker-1 IP
+  - "192.168.1.12"        # worker-2 IP
+  - "k8s.example.com"     # hostname you will use for API/kubectl
 
 ingress-controller: traefik
 
@@ -35,7 +35,7 @@ cni: cilium
 cluster-cidr: "10.42.0.0/16,fd00:10:42::/56"
 service-cidr: "10.43.0.0/16,fd00:10:43::/112"
 
-# Make rbp2 control-plane-only for workloads
+# Make primary server control-plane-only for workloads
 node-label:
   - "openlakes.io/role=control-only"
 node-taint:
@@ -55,7 +55,7 @@ metadata:
 spec:
   valuesContent: |-
     nodeSelector:
-      kubernetes.io/hostname: rbp2
+      kubernetes.io/hostname: primary-server  # Replace with your control-plane node hostname
     tolerations:
     - key: role
       operator: Equal
@@ -183,7 +183,7 @@ spec:
   }
   ```
 - Create and mount `/minio*`, `/alluxio`, `/longhorn`, `/cold-nas` on each node; ensure they are empty before deployment.
-- Label/taint control-plane-only nodes as needed (e.g., rbp2 with `role=control-only:NoSchedule`).
+- Label/taint control-plane-only nodes as needed (e.g., primary-server with `role=control-only:NoSchedule`).
 - Whenever you edit files under `/var/lib/rancher/rke2/server/manifests/`, stream `journalctl -u rke2-server -f` and wait for a line similar to `DesiredSet - Replace Wait ... helm-install-rke2-traefik` to verify the change reconciled.
 
 ## core-config.yaml (key fields)
@@ -210,7 +210,7 @@ Review and adjust `core-config.yaml` before running the deploy script. See [core
 5. Verify pods: `kubectl -n openlakes get pods`. IngressRoutes for `*.openlakes.dev` (or your domain) will be created.
 
 ## DNS and TLS options
-- **Cloudflare (recommended for public HTTPS):** Point `*.openlakes.dev` (or your domain) at the ingress node IP (e.g., rbp2), and let Traefik issue ACME DNS-01 certs using the tokens in the manifest. Replace the placeholder tokens with your own.
+- **Cloudflare (recommended for public HTTPS):** Point `*.openlakes.dev` (or your domain) at the ingress node IP (e.g., primary-server), and let Traefik issue ACME DNS-01 certs using the tokens in the manifest. Replace the placeholder tokens with your own.
 - **Bring-your-own TLS / no Cloudflare:** Remove the ACME arguments/env from the Traefik manifest and:
   1. Create a Kubernetes secret with your certificate (self-signed or trusted):
      ```bash
@@ -236,7 +236,7 @@ If you do not want to use ACME/Cloudflare, remove the `additionalArguments`/`env
 
 `/etc/rancher/rke2/config.yaml` on worker nodes:
 ```yaml
-server: https://10.27.25.82:9345
+server: https://192.168.1.10:9345
 token: "<same token>"
 
 cni: cilium
