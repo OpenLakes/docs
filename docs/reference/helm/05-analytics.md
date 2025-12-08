@@ -24,7 +24,7 @@ OpenLakes analytics layer - Superset and JupyterHub
 
 | Component | Description |
 |-----------|-------------|
-| Hub | Multi-user notebook server |
+| Hub | Notebook server |
 | Proxy | HTTP proxy for notebook routing |
 | User Scheduler | Kubernetes scheduler for user pods |
 | Image Puller | Pre-pulls notebook images |

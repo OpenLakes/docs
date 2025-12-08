@@ -2,7 +2,7 @@
 
 ## Overview
 
-JupyterHub gives analysts and engineers a multi-user notebook environment. It lives in Layer 05 together with Superset and is exposed at `https://jupyter.<domain>` (default credentials: admin / openlakes).
+JupyterHub gives analysts and engineers a browser-based notebook environment. It lives in Layer 05 together with Superset and is exposed at `https://jupyter.<domain>` (default credentials: admin / openlakes).
 
 ## Configuration in OpenLakes
 

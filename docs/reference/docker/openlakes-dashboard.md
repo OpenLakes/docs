@@ -61,7 +61,7 @@ ghcr.io/openlakes/core/openlakes-dashboard
 
 - `1.0.0`, `1.0`, `1`, `latest` - Production release
 - `staging`, `1.0.0-staging` - Release candidate
-- `dev` - Development (team collaboration)
+- `dev` - Development builds
 - `local` - Local builds (not pushed to registry)
 
 ## Building

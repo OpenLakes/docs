@@ -6,7 +6,6 @@ Get started with OpenLakes Harbor in minutes. No Kubernetes or infrastructure se
 
 Visit [harbor.openlakes.io](https://harbor.openlakes.io) and create your account.
 
-- Use your work email for team collaboration
 - No credit card required for the 30-day trial
 
 ## 2. Access Your Environment

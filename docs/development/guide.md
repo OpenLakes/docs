@@ -18,7 +18,7 @@ OpenLakes uses a four-tier promotion workflow:
 | Environment | Image Tag | Pull Policy | Use Case |
 |-------------|-----------|-------------|----------|
 | **Local** | `local` | `Never` | Individual developer iteration |
-| **Dev** | `dev` | `Always` | Team collaboration |
+| **Dev** | `dev` | `Always` | Development builds |
 | **Staging** | `staging` | `Always` | QA and release candidates |
 | **Production** | `1.0.0` | `IfNotPresent` | Stable releases |
 

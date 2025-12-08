@@ -26,7 +26,7 @@ OpenLakes Core provides the control plane for the entire lakehouse. It installs 
 | [Project Nessie](components/nessie.md) | REST catalog that stores Iceberg metadata in PostgreSQL and coordinates table versions. |
 | [PostgreSQL & Redis](components/postgres-redis.md) | Shared metadata stores used by Airflow, Superset, Meltano, and OpenMetadata. |
 | [OpenMetadata](components/openmetadata.md) | Catalog/governance platform backed by PostgreSQL + OpenSearch with built-in ingestion Airflow jobs. |
-| [JupyterHub](components/jupyterhub.md) | Multi-user notebooks with KubernetesSpawner and MinIO-backed example sync. |
+| [JupyterHub](components/jupyterhub.md) | Browser-based notebooks with KubernetesSpawner and MinIO-backed example sync. |
 | [Apache Airflow](components/airflow.md) | Orchestration engine running with the KubernetesExecutor and StatsD instrumentation. |
 | [Apache Superset](components/superset.md) | BI dashboarding layer configured to use Trino as its default SQL engine. |
 | [Meltano & Singer](components/meltano.md) | ELT platform that uses Singer taps/targets and the shared PostgreSQL/MinIO services. |

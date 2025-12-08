@@ -1,11 +1,11 @@
-# Pattern 5.2: Collaborative Data Science with JupyterHub
+# Pattern 5.2: Data Science with JupyterHub
 
-Enable data scientists to collaborate on analytics using shared Jupyter notebooks:
+Build analytics workflows using Jupyter notebooks:
 
-1. **Shared Environment**: JupyterHub with consistent Python/Spark setup
+1. **Notebook Environment**: JupyterHub with consistent Python/Spark setup
 2. **Lakehouse Access**: Direct access to Iceberg tables via Spark
-3. **Version Control**: Git integration for notebook collaboration
-4. **Resource Management**: Per-user resource limits and scheduling
+3. **Version Control**: Git integration for notebook versioning
+4. **Resource Management**: Resource limits and scheduling
 
 ## Architecture
 
@@ -19,7 +19,7 @@ Enable data scientists to collaborate on analytics using shared Jupyter notebook
                  │ (Browser: localhost:8888)
         ┌────────▼────────┐
         │   JupyterHub    │
-        │  (Multi-User)   │
+        │                 │
         └────────┬────────┘
                  │
         ┌────────▼────────┐
@@ -34,12 +34,12 @@ Enable data scientists to collaborate on analytics using shared Jupyter notebook
         └─────────────────┘
 ```
 
-**Use Case**: Data science team collaborates on exploratory data analysis, feature engineering, and ML model development using shared notebooks with version control.
+**Use Case**: Data scientists perform exploratory data analysis, feature engineering, and ML model development using notebooks with version control.
 
 **Benefits**:
-- Shared computing environment (no "works on my machine")
+- Consistent computing environment
 - Git integration for version control
-- Resource isolation per user
+- Resource management
 - Access to full lakehouse data
 
 ## Parameters
@@ -276,14 +276,14 @@ print("\n📊 Customer Segment Distribution:")
 df_features.groupBy("customer_segment").count().orderBy(desc("count")).show()
 ```
 
-## Collaboration Best Practices
+## Best Practices
 
-This notebook demonstrates collaborative data science patterns:
+This notebook demonstrates data science workflow patterns:
 
 
 ```python
 print("""
-💡 JupyterHub Collaboration Best Practices:
+💡 JupyterHub Best Practices:
 
 ## 1. Version Control with Git
 
@@ -295,7 +295,7 @@ git commit -m "Add customer segmentation features"
 git push origin feature/customer-features
 ```
 
-## 2. Shared Notebook Standards
+## 2. Notebook Standards
 
 **Notebook Structure**:
 - Cell 1: Parameters (execution_date, environment, etc.)
@@ -333,23 +333,17 @@ spark.stop()  # Free up resources
 - Description: ML features for customer segmentation
 - Tags: `ml-features`, `customer-analytics`
 
-## 5. Collaboration Workflow
+## 5. Development Workflow
 
-**Team Workflow**:
-1. **Explore** (individual): EDA in personal branch
-2. **Share** (team review): Push notebook to Git
-3. **Refine** (collaborative): Code review + feedback
-4. **Productionize** (engineering): Convert to Airflow DAG
+**Notebook Workflow**:
+1. **Explore**: EDA in development branch
+2. **Version**: Push notebook to Git
+3. **Refine**: Iterate based on results
+4. **Productionize**: Convert to Airflow DAG
 
-**Example**:
-- Data Scientist A: EDA on customer churn patterns
-- Data Scientist B: Feature engineering for ML model
-- ML Engineer: Review features, suggest improvements
-- Analytics Engineer: Productionize as scheduled DAG
+## 6. Reusable Libraries
 
-## 6. Shared Libraries
-
-**Common functions in shared package**:
+**Common functions in a utilities package**:
 ```python
 # ~/shared/openlakes_utils.py
 def get_spark_session(app_name):
@@ -399,26 +393,26 @@ else:
 
 ## Summary
 
-### ✅ Pattern 5.2: Collaborative Data Science Complete!
+### ✅ Pattern 5.2: Data Science with JupyterHub Complete!
 
 Demonstrated:
-1. **Shared Environment**: JupyterHub with consistent Spark setup
+1. **Notebook Environment**: JupyterHub with consistent Spark setup
 2. **EDA**: Exploratory analysis of customer events
 3. **Feature Engineering**: ML features for customer segmentation
-4. **Collaboration**: Git-based workflow for team collaboration
+4. **Version Control**: Git-based workflow for notebooks
 
-**Collaboration Benefits**:
-- 🤝 **Team Collaboration**: Git version control for notebooks
-- 🔒 **Resource Isolation**: Per-user resource limits
-- 📚 **Shared Libraries**: Common utilities for the team
-- 📊 **Consistent Environment**: No "works on my machine" issues
-- 🔄 **Workflow**: Explore → Share → Refine → Productionize
+**Benefits**:
+- 📝 **Version Control**: Git for notebook versioning
+- 🔒 **Resource Management**: Configurable resource limits
+- 📚 **Reusable Libraries**: Common utilities
+- 📊 **Consistent Environment**: Reproducible analysis
+- 🔄 **Workflow**: Explore → Version → Refine → Productionize
 
 **Technology Stack**:
 
 | Layer | Technology | Purpose |
 |-------|-----------|----------|
-| **Notebook** | JupyterHub | Multi-user collaboration |
+| **Notebook** | JupyterHub | Browser-based notebooks |
 | **Compute** | PySpark | Distributed data processing |
 | **Storage** | Iceberg | Lakehouse tables |
 | **Catalog** | Nessie | Git-like data versioning |
@@ -428,7 +422,7 @@ Demonstrated:
 - ✅ Exploratory data analysis (EDA)
 - ✅ Feature engineering for ML
 - ✅ Ad-hoc analysis and prototyping
-- ✅ Team collaboration on analysis
+- ✅ Interactive data exploration
 
 **When to Productionize**:
 - ❌ Scheduled production jobs → Convert to Airflow DAG
@@ -439,7 +433,7 @@ Demonstrated:
 ```
 Jupyter Notebook (exploration)
     ↓
-Git Review (team feedback)
+Git Commit (version control)
     ↓
 Python Module (refactor code)
     ↓

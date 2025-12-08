@@ -53,10 +53,10 @@ Register services, datasets, lineage, and quality signals in OpenMetadata. Use t
 - [07-governance-04-data-cataloging](07-governance-04-data-cataloging.md) – onboard data products with ownership and tags.
 
 ## 4. Analyze
-Explore data via notebooks, run collaborative experiments, and publish dashboards built on those open datasets (e.g., NYC taxi revenue heat maps, NOAA anomaly charts, USGS earthquake alerting).
+Explore data via notebooks, run experiments, and publish dashboards built on those open datasets (e.g., NYC taxi revenue heat maps, NOAA anomaly charts, USGS earthquake alerting).
 
 - [05-analytics-bi-01-superset-self-service](05-analytics-bi-01-superset-self-service.md) – empower analysts with curated Superset datasets.
-- [05-analytics-bi-02-jupyter-collaborative-notebooks](05-analytics-bi-02-jupyter-collaborative-notebooks.md) – collaborative notebook workflows.
+- [05-analytics-bi-02-jupyter-notebooks](05-analytics-bi-02-jupyter-notebooks.md) – data science notebook workflows.
 - [05-analytics-bi-03-scheduled-reports](05-analytics-bi-03-scheduled-reports.md) – automated reporting pipelines.
 - [05-analytics-bi-04-reverse-etl](05-analytics-bi-04-reverse-etl.md) – operationalize BI outputs via reverse ETL.
 - [Analytics & BI overview](analytics.md) – contextual entry point for the whole analytics toolchain.

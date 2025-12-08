@@ -23,7 +23,7 @@ OpenLakes Core wires together storage, compute, catalog, orchestration, ingestio
 ## Orchestration & analytics
 
 - **Apache Airflow** (Layer 04) runs with the KubernetesExecutor and a StatsD sidecar that feeds metrics to Prometheus/Grafana. A CronJob mirrors the MinIO `published/` prefix into `/opt/airflow/dags/published` so Papermill DAGs always execute the latest versioned notebooks.
-- **JupyterHub** (Layer 05) provides multi-user notebooks using KubernetesSpawner. The shared `analytics-jupyter-examples` PVC is populated by mirroring the MinIO `shared/` prefix, and the `mark_notebook_ready.py` helper uploads author-approved notebooks back into the bucket for Airflow to consume.
+- **JupyterHub** (Layer 05) provides browser-based notebooks using KubernetesSpawner. The shared `analytics-jupyter-examples` PVC is populated by mirroring the MinIO `shared/` prefix, and the `mark_notebook_ready.py` helper uploads author-approved notebooks back into the bucket for Airflow to consume.
 - **Apache Superset** connects to Trino by default and can reach MinIO-hosted Iceberg tables without manual configuration.
 
 ## Monitoring & logging

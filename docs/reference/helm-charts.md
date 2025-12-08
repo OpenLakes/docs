@@ -64,7 +64,7 @@ Each chart supports four environments via values file merging:
 |-------------|--------------|----------|
 | Production | `values.yaml` | Stable releases, version-pinned images |
 | Local | `values.yaml` + `values-local.yaml` | Rancher Desktop, `imagePullPolicy: Never` |
-| Dev | `values.yaml` + `values-dev.yaml` | Team collaboration, GHCR dev tags |
+| Dev | `values.yaml` + `values-dev.yaml` | Development builds, GHCR dev tags |
 | Staging | `values.yaml` + `values-staging.yaml` | QA testing, release candidates |
 
 Deploy with environment:
