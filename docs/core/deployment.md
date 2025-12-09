@@ -322,4 +322,4 @@ For issues or questions:
 1. Check pod logs: `kubectl logs -n openlakes <pod-name>`
 2. Check events: `kubectl get events -n openlakes`
 3. Review Helm release status: `helm list -n openlakes`
-4. Open an issue at: https://github.com/openlakes-io/openlakes-core/issues
+4. Open an issue at: https://github.com/OpenLakes/openlakes-core/issues

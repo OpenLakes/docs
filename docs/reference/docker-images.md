@@ -150,7 +150,7 @@ All images include standard OCI labels for traceability:
 LABEL org.opencontainers.image.title="..."
 LABEL org.opencontainers.image.description="..."
 LABEL org.opencontainers.image.version="${VERSION}"
-LABEL org.opencontainers.image.source="https://github.com/openlakes-io/openlakes-core"
+LABEL org.opencontainers.image.source="https://github.com/OpenLakes/openlakes-core"
 LABEL org.opencontainers.image.vendor="OpenLakes"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 ```

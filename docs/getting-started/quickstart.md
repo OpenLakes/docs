@@ -15,7 +15,7 @@ kubectl cluster-info
 ## 2. Clone the repository
 
 ```bash
-git clone https://github.com/openlakes-io/openlakes-core.git
+git clone https://github.com/OpenLakes/openlakes-core.git
 cd openlakes-core/core
 ```
 

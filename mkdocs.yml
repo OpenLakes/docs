@@ -4,7 +4,7 @@ site_description: Documentation for OpenLakes - The open-source lakehouse platfo
 site_author: OpenLakes Team
 
 repo_name: openlakes
-repo_url: https://github.com/openlakes-io/openlakes-site
+repo_url: https://github.com/OpenLakes/openlakes-site
 
 theme:
   name: material
@@ -47,6 +47,7 @@ nav:
   - OpenLakes Harbor:
     - Overview: harbor/index.md
     - Trial Quick Start: harbor/trial-quickstart.md
+    - Data Ingestion: harbor/ingestion.md
     - Harbor vs Self-Hosted: harbor/vs-self-hosted.md
   - Getting Started:
     - Overview: getting-started/index.md
@@ -161,7 +162,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/openlakes-io
+      link: https://github.com/OpenLakes
     - icon: fontawesome/solid/envelope
       link: mailto:hello@openlakes.io
   generator: false

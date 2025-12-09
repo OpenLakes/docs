@@ -18,7 +18,7 @@ Thank you for your interest in contributing to OpenLakes! This guide explains ho
 # Fork the repository on GitHub, then:
 git clone https://github.com/YOUR-USERNAME/openlakes-core.git
 cd openlakes-core
-git remote add upstream https://github.com/openlakes-io/openlakes-core.git
+git remote add upstream https://github.com/OpenLakes/openlakes-core.git
 ```
 
 ### Development Environment
@@ -139,7 +139,7 @@ Before submitting a PR, verify:
 Documentation lives in the `openlakes-site` repository:
 
 ```bash
-git clone https://github.com/openlakes-io/openlakes-site.git
+git clone https://github.com/OpenLakes/openlakes-site.git
 cd openlakes-site
 
 # Install dependencies

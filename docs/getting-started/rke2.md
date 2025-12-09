@@ -202,7 +202,7 @@ Review and adjust `core-config.yaml` before running the deploy script. See [core
 3. Set your kube context to the RKE2 cluster (e.g., `default`).
 4. From the `core` repo, run (deployment checklist):
    ```bash
-   git clone https://github.com/openlakes-io/openlakes-core.git
+   git clone https://github.com/OpenLakes/openlakes-core.git
    cd openlakes-core/core
    ./deploy-openlakes.sh --skip-throughput-check
    ```

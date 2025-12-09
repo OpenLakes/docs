@@ -51,4 +51,4 @@ Pricing details will be announced closer to launch.
 ## Questions?
 
 - **Sales inquiries**: [sales@openlakes.io](mailto:sales@openlakes.io)
-- **Technical questions**: Check the [documentation](../getting-started/index.md) or visit our [GitHub](https://github.com/openlakes-io)
+- **Technical questions**: Check the [documentation](../getting-started/index.md) or visit our [GitHub](https://github.com/OpenLakes)

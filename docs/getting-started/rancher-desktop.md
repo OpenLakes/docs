@@ -17,7 +17,7 @@ Use this path for a local single-node cluster on macOS/Apple Silicon (Rancher De
 3. If you want DNS+TLS, point `*.openlakes.dev` (or your domain) at the host IP and configure Cloudflare DNS-01 in Traefik. Otherwise add `/etc/hosts` entries and access via HTTP or your own self-signed certificates.
 4. Run the deploy script from the `core` repo (full deployment checklist):
    ```bash
-   git clone https://github.com/openlakes-io/openlakes-core.git
+   git clone https://github.com/OpenLakes/openlakes-core.git
    cd openlakes-core/core
    ./deploy-openlakes.sh --skip-throughput-check
    ```
