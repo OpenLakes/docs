@@ -30,7 +30,28 @@ We do not sell or rent personal information. Limited sharing may occur with serv
 
 ## Cookies and Analytics
 
-We may use cookies or similar technologies to keep the Services functioning and to understand aggregate usage. You can usually set your browser to refuse cookies, although doing so may limit features.
+### Website Analytics (No Cookies)
+
+We use [Plausible Analytics](https://plausible.io), a privacy-focused analytics tool, to understand how visitors use our websites. Plausible:
+
+- **Does not use cookies** or any persistent identifiers
+- **Does not collect personal data** or track individual users
+- **Does not use fingerprinting** or any cross-site tracking
+- Collects only aggregate, anonymous metrics (page views, referrer, country, device type)
+- Is self-hosted on our infrastructure at `plausible.openlakes.io`
+
+Because Plausible does not use cookies or collect personal data, **no cookie consent banner is required** under GDPR, ePrivacy, or similar regulations.
+
+### Essential Cookies (Harbor Service Only)
+
+When you sign in to OpenLakes Harbor (`harbor.openlakes.io`), we use **essential session cookies** to:
+
+- Keep you logged in during your session
+- Remember your authentication state across page loads
+
+These are strictly necessary cookies required for the service to function. They are not used for tracking or analytics, and they expire when you log out or after a period of inactivity.
+
+You can clear these cookies at any time by logging out or clearing your browser data.
 
 ## No Guarantee of Privacy
 
