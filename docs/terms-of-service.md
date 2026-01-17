@@ -1,6 +1,6 @@
 # Terms of Service
 
-_Last updated: December 2025_
+_Last updated: January 2026_
 
 These Terms of Service ("Terms") govern your access to and use of https://openlakes.io, https://docs.openlakes.io, and any documentation, downloads, trial experiences, or related services (collectively, the "Services") provided by OpenLakes LLC, a Texas limited liability company ("OpenLakes," "we," "us," or "our"). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.
 
@@ -112,6 +112,8 @@ All content we provide through the Services (excluding third-party content) is o
 ## 11. Third-Party Services and Components
 
 The Services may provide links to third-party websites, repositories, or resources. The software includes third-party open source components. We are not responsible for the availability, accuracy, security, or content of any third-party services or components, and you access and use them at your own risk.
+
+We may use third-party analytics services, including Google Analytics, to measure usage of the Services. These services may set cookies or collect usage data as described in our Privacy Policy.
 
 ## 12. Changes to the Services or Terms
 

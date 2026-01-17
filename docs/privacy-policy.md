@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last updated: December 2025_
+_Last updated: January 2026_
 
 This Privacy Policy explains how OpenLakes LLC, a Texas limited liability company ("OpenLakes," "we," "us," or "our"), collects, uses, and handles information in connection with https://openlakes.io, https://docs.openlakes.io, and any documentation, downloads, or trial experiences hosted on these sites (collectively, the "Services").
 
@@ -30,17 +30,18 @@ We do not sell or rent personal information. Limited sharing may occur with serv
 
 ## Cookies and Analytics
 
-### Website Analytics (No Cookies)
+### Website Analytics (Google Analytics)
 
-We use [Plausible Analytics](https://plausible.io), a privacy-focused analytics tool, to understand how visitors use our websites. Plausible:
+We use Google Analytics (GA4) to understand how visitors use our websites and documentation. Google Analytics may set cookies or similar technologies and collect information such as:
 
-- **Does not use cookies** or any persistent identifiers
-- **Does not collect personal data** or track individual users
-- **Does not use fingerprinting** or any cross-site tracking
-- Collects only aggregate, anonymous metrics (page views, referrer, country, device type)
-- Is self-hosted on our infrastructure at `plausible.openlakes.io`
+- Pages viewed, links clicked, and other usage events
+- Device and browser information
+- Referrer/source information
+- Approximate location derived from IP address
 
-Because Plausible does not use cookies or collect personal data, **no cookie consent banner is required** under GDPR, ePrivacy, or similar regulations.
+Google processes this data on our behalf to provide aggregated reporting. Learn more in [Google's Privacy Policy](https://policies.google.com/privacy). You can opt out using the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout) or by adjusting your browser cookie settings.
+
+We do not intentionally send sensitive personal information to Google Analytics.
 
 ### Essential Cookies (Harbor Service Only)
 

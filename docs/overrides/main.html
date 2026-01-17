@@ -2,8 +2,15 @@
 
 {% block extrahead %}
   {{ super() }}
-  <script defer data-domain="docs.openlakes.io" src="https://plausible.openlakes.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN59Z3Q9HZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YN59Z3Q9HZ');
+  </script>
 {% endblock %}
 
 {% block scripts %}
